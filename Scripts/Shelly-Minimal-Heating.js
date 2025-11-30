@@ -4,16 +4,16 @@
 
 // Change these settings as you like
 let Region = "FI"; // Supported regions: DK1, DK2, EE, FI, LT, LV, NO1, NO2, NO3, NO4, NO5, SE1, SE2, SE3, SE4
-let SelectedPricePeriods = ["1-4"]; // Selects the cheapest price periods (Note! use quotes only for ranges). You can also define individually: [1,2,3,4].
-let PricePeriodLength = 60; // Duration of one price period ("rank") in minutes (15, 30, 45, 60, 75, 90, or 120). Total activation time = SelectedPricePeriods count × PricePeriodLength.
+let SelectedPricePeriods = ["1-80"]; // Selects the cheapest price periods (Note! use quotes only for ranges). You can also define individually: [1,2,3,4].
+let PricePeriodLength = 15; // Duration of one price period ("rank") in minutes (15, 30, 45, 60, 75, 90, or 120). Total activation time = SelectedPricePeriods count Ã— PricePeriodLength.
 let Relays = [0]; // Relays to control. For example: [0, 1, 2] to control three relays.
-let NightHours = [22, 23, 0, 1, 2, 3, 4, 5, 6]; // Night transfer hours. These usually don’t need to be changed (not even during daylight saving time changes).
+let NightHours = [0, 1, 2, 3, 4, 5]; // Night transfer hours. These usually donâ€™t need to be changed (not even during daylight saving time changes).
 let PriceDifference = -1.43; // Difference between night and day prices. A negative value means the night transfer is cheaper by this amount. Information available from the electricity distribution company.
 let OnlyNightHours = false; // If true, cheapest hours are only searched from the night hours. Default is false == all hours.
 let PriceAlwaysAllowed = -99; // Daytime price that is always allowed. During night hours PriceDifference is reduced from price before comparison. Disable with -99.
 let MaximumPrice = 99.9; // Maximum allowed price in euro cents.
 let BackupHours = [3, 4, 5, 6]; // If Internet connection is down, turn relay ON during these hours (0...23). Use [99], if you don't want any backup hours.
-let Inverted = false; // If "true", relay logic is inverted (= relay is turned ON when price is too exepensive and OFF when cheap)
+let Inverted = true; // If "true", relay logic is inverted (= relay is turned ON when price is too exepensive and OFF when cheap)
 
 // Code starts here - do not change
 if (OnlyNightHours == true) { PriceDifference = -999; }
