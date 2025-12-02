@@ -8,9 +8,9 @@ let SelectedPricePeriods = ["1-80"]; // Selects the cheapest price periods (Note
 let PricePeriodLength = 15; // Duration of one price period ("rank") in minutes (15, 30, 45, 60, 75, 90, or 120). Total activation time = SelectedPricePeriods count × PricePeriodLength.
 let Relays = [0]; // Relays to control. For example: [0, 1, 2] to control three relays.
 let NightHours = [0, 1, 2, 3, 4, 5]; // Night transfer hours. These usually don’t need to be changed (not even during daylight saving time changes).
-let PriceDifference = -1.43; // Difference between night and day prices. A negative value means the night transfer is cheaper by this amount. Information available from the electricity distribution company.
+let PriceDifference = -99; // Difference between night and day prices. A negative value means the night transfer is cheaper by this amount. Information available from the electricity distribution company.
 let OnlyNightHours = false; // If true, cheapest hours are only searched from the night hours. Default is false == all hours.
-let PriceAlwaysAllowed = -99; // Daytime price that is always allowed. During night hours PriceDifference is reduced from price before comparison. Disable with -99.
+let PriceAlwaysAllowed = 5; // Daytime price that is always allowed. During night hours PriceDifference is reduced from price before comparison. Disable with -99.
 let MaximumPrice = 99.9; // Maximum allowed price in euro cents.
 let BackupHours = [3, 4, 5, 6]; // If Internet connection is down, turn relay ON during these hours (0...23). Use [99], if you don't want any backup hours.
 let Inverted = true; // If "true", relay logic is inverted (= relay is turned ON when price is too exepensive and OFF when cheap)
